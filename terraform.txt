@@ -1,0 +1,35 @@
+resource "aws_instance" "this" {
+  ami                       = "ami-0dcc1e21636832c5d"
+  instance_type             = "m5.large"
+  host_resource_group_arn   = "arn:aws:resource-groups:us-west-2:012345678901:group/win-testhost"
+  tenancy                   = "host"
+}
+
+**whenever we call the variable we need to write "var." and then
+  the varible name.In [] we need to call this variable
+  eg. [var.variable]
+
+**We will also declare the variable in command line .
+  command-->terraform plan -var="instance_type=t2.small"
+
+**we will also declare the variable in "terraform.tfvars" file
+  eg in variable.tf file->variable "instancetype"{
+					default="t2.micro"	
+						}
+      in terraform.tfvars file->instancetype="t2.nano"
+@@priority of terraform.tfvars file is more
+
+##### Data Types ####
+
+String->"hello"
+list ->["mumbai","goa","Singapore"]-position starts with 0
+map ->{name="mabel",age =52}
+number ->200
+
+
+
+
+
+
+
+	
